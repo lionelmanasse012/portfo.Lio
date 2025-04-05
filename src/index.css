@@ -1,3 +1,154 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-rgb: 240, 240, 242;
+}
+
+.dark {
+  --foreground-rgb: 240, 240, 242;
+  --background-rgb: 25, 25, 25;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+::selection {
+  background-color: rgba(134, 150, 160, 0.2);
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(var(--foreground-rgb));
+  transition: width 0.5s ease;
+}
+
+.project-card:hover::after {
+  width: 100%;
+}
+
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(var(--foreground-rgb));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(var(--foreground-rgb), 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.hover-link:hover ~ .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(var(--foreground-rgb), 0.1);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Dark mode specific styles */
+.dark .border-[#e6e6e8] {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .bg-[#e6e6e8] {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .text-[#8696a0] {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .bg-[#f0f0f2]/80 {
+  background-color: rgba(25, 25, 25, 0.8);
+}
+
+/* Transition for theme toggle */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s forwards;
+}
+
+.animate-fadeInDelay {
+  animation: fadeIn 0.8s 0.3s forwards;
+}
+
+.animate-fadeInLongDelay {
+  animation: fadeIn 0.8s 0.6s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+.delay-4 {
+  animation-delay: 1s;
+}
