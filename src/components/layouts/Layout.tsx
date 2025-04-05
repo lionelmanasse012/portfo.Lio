@@ -20,9 +20,9 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className={`min-h-screen bg-[#f0f0f2] text-[#333333] dark:bg-[#191919] dark:text-[#f0f0f2] theme-transition`}>
       <header className="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center backdrop-blur-sm bg-[#f0f0f2]/80 dark:bg-[#191919]/80 theme-transition">
-        <Link to="/" className="text-sm font-light tracking-wide z-50 cursor-hover">
-          <span className="text-[#8696a0] dark:text-[#8696a0]">lionel</span>
-          <span className="text-[#333333] dark:text-[#f0f0f2]">.mutombo</span>
+        <Link to="/" className="text-lg font-light tracking-wide z-50 cursor-hover">
+          <span className="text-[#8696a0] dark:text-[#8696a0]">portfo.</span>
+          <span className="text-[#333333] dark:text-[#f0f0f2]">Lio</span>
         </Link>
 
         <nav className="hidden md:flex space-x-8">
