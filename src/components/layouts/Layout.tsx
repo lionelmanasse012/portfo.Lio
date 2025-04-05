@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import ThemeToggle from "../ThemeToggle"
 import LanguageToggle from "../LanguageToggle"
-import { useTheme } from "../../contexts/ThemeContext"
+
 import { useLanguage } from "../../contexts/LanguageContext"
 
 interface LayoutProps {
@@ -13,7 +13,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const { theme } = useTheme()
+
   const { t } = useLanguage()
   const pathname = location.pathname
 
